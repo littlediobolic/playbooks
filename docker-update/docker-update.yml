@@ -1,0 +1,6 @@
+---
+- name: Update Docker Images
+  hosts: docker
+
+  tasks:
+    - name: 
