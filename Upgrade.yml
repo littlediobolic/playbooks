@@ -18,11 +18,11 @@
       command: needs-restarting -r
       ignore_errors: True
       register: rhel_reboot_required
-    
+
     - name: Reboot if necessary
       reboot:
         msg: "Reboot initiated by Ansible Upgrade"
-      when: rhel_reboot_required == 1
+      when: rhel_reboot_required.rc == 1
 
 
 - name: Upgrade apt servers
